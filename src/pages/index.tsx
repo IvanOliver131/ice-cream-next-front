@@ -8,8 +8,7 @@ import { Input } from '../components/Form/Input';
 import { Logo } from '../components/Header/Logo';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { useDarkmodeContext } from '../contexts/DarkmodeContext';
-import { dark, light } from '../styles';
+import { StyleHook as theme} from '../hooks/StyleHook';
 
 // import { useContext } from 'react';
 // import { AuthContext } from '../contexts/AuthContext';
@@ -27,8 +26,6 @@ const signInFormSchema = yup.object().shape({
 // A propriedade align sinaliza erro porem não esta com erro
 export default function SignIn() {
   const router = useRouter();
-  const { mode } = useDarkmodeContext();
-  const theme = mode === 'dark' ? dark : light;
 
   const { register, handleSubmit, formState } = useForm<SignInFormData>({
     resolver: yupResolver(signInFormSchema)
