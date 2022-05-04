@@ -3,7 +3,6 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { SidebarDrawerProvider } from '../contexts/SidebarDrawerContext';
 import { DarkmodeProvider, useDarkmodeContext } from '../contexts/DarkmodeContext';
 import { dark } from '../styles';
-import { FatherComponent } from '../components/FatherComponent';
 
 // import { QueryClientProvider } from 'react-query';
 // import { ReactQueryDevtools } from 'react-query/devtools';

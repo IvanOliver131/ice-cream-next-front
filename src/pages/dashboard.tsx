@@ -2,8 +2,7 @@ import { Box, ChakraProvider, Flex, SimpleGrid, Text, theme } from "@chakra-ui/r
 import dynamic from "next/dynamic";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
-
-import { StyleHook as themeMode} from '../hooks/StyleHook';
+import { StyleHook } from "../hooks/StyleHook";
 
 const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false // Desliga o serverSideRendering
@@ -62,8 +61,10 @@ const series = [
   { name: 'series1', data: [31, 120, 10, 28, 61, 18, 189] }
 ];
 export default function Dashboard() {
+  const theme = StyleHook();
+
   return (
-    <ChakraProvider theme={themeMode}>
+    <ChakraProvider theme={theme}>
       <Flex direction="column" h="100vh">
         <Header />
 

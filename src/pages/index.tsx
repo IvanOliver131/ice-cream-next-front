@@ -8,10 +8,7 @@ import { Input } from '../components/Form/Input';
 import { Logo } from '../components/Header/Logo';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { StyleHook as theme} from '../hooks/StyleHook';
-
-// import { useContext } from 'react';
-// import { AuthContext } from '../contexts/AuthContext';
+import { StyleHook } from '../hooks/StyleHook';
 
 type SignInFormData = {
   email: string;
@@ -26,6 +23,7 @@ const signInFormSchema = yup.object().shape({
 // A propriedade align sinaliza erro porem não esta com erro
 export default function SignIn() {
   const router = useRouter();
+  const theme = StyleHook();
 
   const { register, handleSubmit, formState } = useForm<SignInFormData>({
     resolver: yupResolver(signInFormSchema)
