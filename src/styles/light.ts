@@ -1,6 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 
 // * Sobreescrevendo os temas padroes
+// LIGHT THEME
 export const light = extendTheme({
   colors: {
     gray: {
